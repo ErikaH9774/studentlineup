@@ -2,19 +2,53 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+	ifstream inputFile("LineUp.txt");
+	string name;
+	string firstName, Lastname;
+
+	int count = 0;
+	//check if the file opens correctly 
+	if (!inputFile) {
+
+		cerr << "Error: Cannot open file LineUp.txt" << endl;
+		return 1;
+	}
+	//Read the first name to iniliaziles comparison
+
+	if (inputFile >> name) {
+
+		firstName = name;
+		Lastname = name;
+		count = 1;
+	}
+	else {
+
+		cout << "No names found in the file" << endl;
+
+		return 0;
+
+	} while (inputFiles >> name) {
+
+		firstName = name;
+	}
+	if (name > Lastname) {
+
+		Lastname = name;
+	}
+
+} inputFiles.close() {
+
+	cout << " Number of students: \n" << count << "." endl;
+	cout << " First in line: " << firstName << "." endl;
+	cout << "Last in line: " << Lastname << "." endl;
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
